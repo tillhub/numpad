@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-import ExampleComponent from '@tillhub/numpad'
+import NumPad from '@tillhub/numpad'
 
 export default class App extends Component {
   render () {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <NumPad clickHandler={value => console.log(value)} />
       </div>
     )
   }
