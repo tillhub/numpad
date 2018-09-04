@@ -6,7 +6,34 @@ import Keypad from './Keypad'
 
 export default class NumPad extends Component {
   state = {
-    input: this.props.startValue || 0
+    input: this.props.startValue || '0'
+  }
+
+  validate(string) {
+    if (string === '') return true
+
+    // matches single 0, single minus,
+    // positive/negative decimal numbers (up to 2 digits after separator),
+    // empty string
+    const regex = /^$|^-?(0|[1-9][0-9]*)(\.?|\.[0-9][0-9]?)$|^-$/g
+    const result = regex.test(string)
+
+    return result
+  }
+
+  removeLeadingZero(string) {
+    if (!string) return ''
+    return string.replace(/^0(?=[0-9])/g, '')
+  }
+
+  setDisplayText = (text) => {
+    const displayText = this.removeLeadingZero(text)
+
+    if (!this.validate(displayText)) return null
+
+    return this.setState({ input: displayText }, () => {
+      this.props.handleChange(this.state.input)
+    })
   }
 
   removeLastCharacter (str) {
@@ -14,39 +41,33 @@ export default class NumPad extends Component {
     return str.trim().slice(0, -1)
   }
 
-  handleInput = (e) => {
-    this.setState({ input: e.target.value }, () => {
-      this.props.handleChange(this.state.input)
-    })
-  }
-
-  handleKeypadPress = text => {
+  handleKeypadPress = key => {
     const { input } = this.state
 
-    let newText
+    let text
 
-    if (text === 'back') {
-      newText = this.removeLastCharacter(input && input.toString())
-    } else if (text === 'C') {
-      newText = 0
+    if (key === 'back') {
+      text = this.removeLastCharacter(input && input.toString())
+    } else if (key === 'C') {
+      text = 0
     } else {
-      newText = input ? `${input.toString()}${text}` : text
+      text = input ? `${input.toString()}${key}` : key
     }
 
-    this.setState({ input: parseFloat(newText) })
+    this.setDisplayText(text)
   }
 
   render () {
-    const { disabled } = this.props
+    const { disabled, withoutInputField } = this.props
     const { input } = this.state
 
     return (
       <div>
         <input
           className={classnames(styles.inputField)}
-          value={(parseInt(input, 10)) || 0}
-          onChange={this.handleInput}
-          disabled={disabled}
+          value={input}
+          onChange={e => this.setDisplayText(e.target.value)}
+          disabled={disabled || withoutInputField}
         />
 
         <Keypad disabled={disabled} clickHandler={this.handleKeypadPress} />
@@ -58,9 +79,11 @@ export default class NumPad extends Component {
 NumPad.propTypes = {
   handleChange: PropTypes.func,
   startValue: PropTypes.number,
-  disabled: PropTypes.bool.isRequired
+  disabled: PropTypes.bool.isRequired,
+  withoutInputField: PropTypes.bool
 }
 
 NumPad.defaultProps = {
-  handleChange: () => {}
+  handleChange: () => {},
+  withoutInputField: false
 }

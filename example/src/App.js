@@ -6,7 +6,7 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <NumPad clickHandler={value => console.log(value)} />
+        <NumPad handleChange={value => console.log(value)} />
       </div>
     )
   }

@@ -1,6 +1,6 @@
 # @tillhub/numpad
 
-> Simple numpad.
+> Simple numpad with display field, that also acts as an optional input field.
 
 [![NPM](https://img.shields.io/npm/v/@tillhub/numpad.svg)](https://www.npmjs.com/package/@tillhub/numpad) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
