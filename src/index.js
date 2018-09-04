@@ -4,6 +4,8 @@ import classnames from 'classnames'
 import styles from './styles.css'
 import Keypad from './Keypad'
 
+const DEFAULT_WIDTH = '400px'
+
 export default class NumPad extends Component {
   state = {
     input: this.props.startValue || '0'
@@ -62,11 +64,11 @@ export default class NumPad extends Component {
   }
 
   render () {
-    const { disabled, withoutInputField, decimalSeparator } = this.props
+    const { disabled, withoutInputField, decimalSeparator, width } = this.props
     const { input } = this.state
 
     return (
-      <div>
+      <div className={styles.wrapper} style={{ width }} >
         <input
           className={classnames(styles.inputField)}
           value={input || '0'}
@@ -89,11 +91,13 @@ NumPad.propTypes = {
   startValue: PropTypes.number,
   disabled: PropTypes.bool.isRequired,
   withoutInputField: PropTypes.bool,
-  decimalSeparator: PropTypes.string
+  decimalSeparator: PropTypes.string,
+  width: PropTypes.string
 }
 
 NumPad.defaultProps = {
   handleChange: () => {},
   withoutInputField: false,
-  decimalSeparator: '.'
+  decimalSeparator: '.',
+  width: DEFAULT_WIDTH
 }
