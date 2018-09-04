@@ -12,18 +12,22 @@ export default class NumPad extends Component {
   validate(string) {
     if (string === '') return true
 
-    // matches single 0, single minus,
+    // regex matches single 0, single minus,
     // positive/negative decimal numbers (up to 2 digits after separator),
     // empty string
-    const regex = /^$|^-?(0|[1-9][0-9]*)(\.?|\.[0-9][0-9]?)$|^-$/g
-    const result = regex.test(string)
+    let regex
+    if (this.props.decimalSeparator === ',') {
+      regex = /^$|^-?(0|[1-9][0-9]*)(,?|,[0-9][0-9]?)$|^-$/g
+    } else {
+      regex = /^$|^-?(0|[1-9][0-9]*)(\.?|\.[0-9][0-9]?)$|^-$/g
+    }
 
-    return result
+    return regex.test(string)
   }
 
   removeLeadingZero(string) {
     if (!string) return ''
-    return string.replace(/^0(?=[0-9])/g, '')
+    return string.replace(/^0(?=[0-9-])/g, '')
   }
 
   setDisplayText = (text) => {
@@ -49,7 +53,7 @@ export default class NumPad extends Component {
     if (key === 'back') {
       text = this.removeLastCharacter(input && input.toString())
     } else if (key === 'C') {
-      text = 0
+      text = '0'
     } else {
       text = input ? `${input.toString()}${key}` : key
     }
@@ -58,19 +62,23 @@ export default class NumPad extends Component {
   }
 
   render () {
-    const { disabled, withoutInputField } = this.props
+    const { disabled, withoutInputField, decimalSeparator } = this.props
     const { input } = this.state
 
     return (
       <div>
         <input
           className={classnames(styles.inputField)}
-          value={input}
+          value={input || '0'}
           onChange={e => this.setDisplayText(e.target.value)}
           disabled={disabled || withoutInputField}
         />
 
-        <Keypad disabled={disabled} clickHandler={this.handleKeypadPress} />
+        <Keypad
+          disabled={disabled}
+          clickHandler={this.handleKeypadPress}
+          decimalSeparator={decimalSeparator}
+        />
       </div>
     )
   }
@@ -80,10 +88,12 @@ NumPad.propTypes = {
   handleChange: PropTypes.func,
   startValue: PropTypes.number,
   disabled: PropTypes.bool.isRequired,
-  withoutInputField: PropTypes.bool
+  withoutInputField: PropTypes.bool,
+  decimalSeparator: PropTypes.string
 }
 
 NumPad.defaultProps = {
   handleChange: () => {},
-  withoutInputField: false
+  withoutInputField: false,
+  decimalSeparator: '.'
 }

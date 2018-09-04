@@ -6,7 +6,7 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <NumPad handleChange={value => console.log(value)} />
+        <NumPad handleChange={value => console.log(value)} decimalSeparator=',' />
       </div>
     )
   }

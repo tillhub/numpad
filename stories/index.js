@@ -10,3 +10,6 @@ storiesOf('NumPad', module)
   .add('with input field disabled', () => (
     <NumPad handleChange={action('clicked')} withoutInputField />
   ))
+  .add('with comma separator', () => (
+    <NumPad handleChange={action('clicked')} decimalSeparator=',' />
+  ))

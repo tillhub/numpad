@@ -6,7 +6,7 @@ import styles from '../styles.css'
 
 const buttonValues = ['C', '7', '8', '9', '4', '5', '6', '1', '2', '3']
 
-export default function Keypad({ clickHandler, disabled }) {
+export default function Keypad({ clickHandler, disabled, decimalSeparator }) {
   const buttons = buttonValues.map(value => (
     <Button text={value} clickHandler={clickHandler} key={value} disabled={disabled} >
       {value}
@@ -22,8 +22,8 @@ export default function Keypad({ clickHandler, disabled }) {
       <Button text='0' klass={styles.zero} clickHandler={clickHandler} disabled={disabled}>
         0
       </Button>
-      <Button text='.' clickHandler={clickHandler} disabled={disabled}>
-        .
+      <Button text={decimalSeparator} clickHandler={clickHandler} disabled={disabled}>
+        {decimalSeparator}
       </Button>
     </div>
   )
@@ -31,5 +31,6 @@ export default function Keypad({ clickHandler, disabled }) {
 
 Keypad.propTypes = {
   clickHandler: PropTypes.func.isRequired,
-  disabled: PropTypes.bool.isRequired
+  disabled: PropTypes.bool.isRequired,
+  decimalSeparator: PropTypes.string.isRequired
 }
