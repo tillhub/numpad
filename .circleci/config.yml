@@ -23,3 +23,9 @@ jobs:
       - run:
           name: release
           command: npm run semantic-release || true
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
