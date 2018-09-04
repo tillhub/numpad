@@ -89,7 +89,7 @@ export default class NumPad extends Component {
 NumPad.propTypes = {
   handleChange: PropTypes.func,
   startValue: PropTypes.number,
-  disabled: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool,
   withoutInputField: PropTypes.bool,
   decimalSeparator: PropTypes.string,
   width: PropTypes.string
@@ -97,6 +97,8 @@ NumPad.propTypes = {
 
 NumPad.defaultProps = {
   handleChange: () => {},
+  startValue: null,
+  disabled: false,
   withoutInputField: false,
   decimalSeparator: '.',
   width: DEFAULT_WIDTH
