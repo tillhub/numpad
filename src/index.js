@@ -11,6 +11,12 @@ export default class NumPad extends Component {
     input: this.props.startValue || '0'
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.startValue !== prevProps.startValue) {
+      this.setState({ input: this.props.startValue })
+    }
+  }
+
   validate(string) {
     if (string === '') return true
 
@@ -68,7 +74,7 @@ export default class NumPad extends Component {
     const { input } = this.state
 
     return (
-      <div className={styles.wrapper} style={{ width }} >
+      <div className={styles.wrapper} style={{ width }}>
         <input
           className={classnames(styles.inputField)}
           value={input || '0'}
