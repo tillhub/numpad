@@ -14,7 +14,7 @@ export default function Keypad({ clickHandler, disabled, decimalSeparator }) {
   ))
 
   return (
-    <div className={styles.numPad}>
+    <div className={styles.keypad}>
       <Button text='back' klass={styles.back} clickHandler={clickHandler} disabled={disabled}>
         <img src={backspaceIcon} />
       </Button>
