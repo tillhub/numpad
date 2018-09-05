@@ -70,7 +70,7 @@ export default class NumPad extends Component {
   }
 
   render () {
-    const { disabled, withoutInputField, decimalSeparator, width } = this.props
+    const { disabled, withoutInputField, decimalSeparator, width, children } = this.props
     const { input } = this.state
 
     return (
@@ -81,6 +81,8 @@ export default class NumPad extends Component {
           onChange={e => this.setDisplayText(e.target.value)}
           disabled={disabled || withoutInputField}
         />
+
+        {children}
 
         <Keypad
           disabled={disabled}
@@ -98,7 +100,8 @@ NumPad.propTypes = {
   disabled: PropTypes.bool,
   withoutInputField: PropTypes.bool,
   decimalSeparator: PropTypes.string,
-  width: PropTypes.string
+  width: PropTypes.string,
+  children: PropTypes.nodes
 }
 
 NumPad.defaultProps = {
@@ -107,5 +110,6 @@ NumPad.defaultProps = {
   disabled: false,
   withoutInputField: false,
   decimalSeparator: '.',
-  width: DEFAULT_WIDTH
+  width: DEFAULT_WIDTH,
+  children: null
 }
