@@ -31,17 +31,26 @@
   line-height: 40px;
   display: table-cell;
   vertical-align: middle;
+  cursor: pointer;
+}
+
+.button.disabled {
+  color: grey;
 }
 
 .button.back {
   display: flex;
 }
 
-.button:hover {
+.disabled img {
+  opacity: 0.4;
+}
+
+.button:not([disabled]):hover {
   background-color: rgba(238, 159, 89, 0.5);
 }
 
-.button:active {
+.button:not([disabled]):active {
   background-color: rgb(238, 159, 89);
   box-shadow: 0 2px #666;
   transform: translateY(2px);
