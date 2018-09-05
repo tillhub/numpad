@@ -101,7 +101,7 @@ NumPad.propTypes = {
   withoutInputField: PropTypes.bool,
   decimalSeparator: PropTypes.string,
   width: PropTypes.string,
-  children: PropTypes.nodes
+  children: PropTypes.node
 }
 
 NumPad.defaultProps = {
