@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/tillhub/numpad/compare/v2.0.2...v2.1.0) (2018-10-17)
+
+
+### Features
+
+* **build:** use parcel for build instead of rollup ([471cad9](https://github.com/tillhub/numpad/commit/471cad9))
+
 ## [2.0.2](https://github.com/tillhub/numpad/compare/v2.0.1...v2.0.2) (2018-10-17)
 
 
