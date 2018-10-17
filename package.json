@@ -6,7 +6,7 @@
   "author": "qtotuan",
   "license": "MIT",
   "repository": "tillhub/numpad",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
   "engines": {
     "node": ">=8",
     "npm": ">=5"
