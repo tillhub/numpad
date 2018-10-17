@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/tillhub/numpad/compare/v2.1.2...v2.1.3) (2018-10-17)
+
+
+### Bug Fixes
+
+* **build:** remove parcel ([cd7e736](https://github.com/tillhub/numpad/commit/cd7e736))
+
 ## [2.1.2](https://github.com/tillhub/numpad/compare/v2.1.1...v2.1.2) (2018-10-17)
 
 
