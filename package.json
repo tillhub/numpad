@@ -14,8 +14,8 @@
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "build": "rimraf dist && parcel build src/index.js",
-    "start": "parcel src/index.js",
+    "build": "rimraf dist && rollup -c",
+    "start": "rollup -c -w",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
     "storybook": "start-storybook -p 9001 -c .storybook",
@@ -57,7 +57,6 @@
     "eslint-plugin-react": "^7.10.0",
     "eslint-plugin-standard": "^3.1.0",
     "gh-pages": "^1.2.0",
-    "parcel": "^1.10.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
