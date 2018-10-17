@@ -77,7 +77,7 @@
     "dist",
     "package.json",
     "package-lock.json",
-    "src/**/*.{js}",
+    "src/**/*.{js?x}",
     "CHANGELOG.md"
   ],
   "dependencies": {},
@@ -105,7 +105,7 @@
           "dist",
           "package.json",
           "package-lock.json",
-          "src/**/*.{js}",
+          "src",
           "CHANGELOG.md"
         ],
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
