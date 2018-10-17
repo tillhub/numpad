@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/tillhub/numpad/compare/v2.0.1...v2.0.2) (2018-10-17)
+
+
+### Bug Fixes
+
+* **release:** changes to the released files ([40be49a](https://github.com/tillhub/numpad/commit/40be49a))
+
 ## [2.0.1](https://github.com/tillhub/numpad/compare/v2.0.0...v2.0.1) (2018-10-17)
 
 
