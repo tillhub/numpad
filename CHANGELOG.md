@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/tillhub/numpad/compare/v2.0.0...v2.0.1) (2018-10-17)
+
+
+### Bug Fixes
+
+* **deps:** remove unused dep ([6d7479b](https://github.com/tillhub/numpad/commit/6d7479b))
+
 # [2.0.0](https://github.com/tillhub/numpad/compare/v1.2.0...v2.0.0) (2018-10-17)
 
 
