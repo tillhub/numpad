@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/tillhub/numpad/compare/v2.1.3...v2.1.4) (2018-10-17)
+
+
+### Bug Fixes
+
+* **package.json:** entry file ([1e04bc2](https://github.com/tillhub/numpad/commit/1e04bc2))
+
 ## [2.1.3](https://github.com/tillhub/numpad/compare/v2.1.2...v2.1.3) (2018-10-17)
 
 
