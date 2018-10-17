@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/tillhub/numpad/compare/v1.2.0...v2.0.0) (2018-10-17)
+
+
+### Bug Fixes
+
+* **build:** fixes build after reversioning ([c67ef86](https://github.com/tillhub/numpad/commit/c67ef86))
+
+
+### BREAKING CHANGES
+
+* **build:** Build and import issues
+
 # 1.0.0 (2018-10-17)
 
 
