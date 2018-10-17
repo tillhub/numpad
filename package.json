@@ -71,7 +71,6 @@
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-url": "^1.4.0",
     "semantic-release": "^15.9.17",
-    "styled-components": "^4.0.0",
     "validate-commit-msg": "^2.14.0"
   },
   "files": [
