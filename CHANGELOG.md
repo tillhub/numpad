@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/tillhub/numpad/compare/v2.1.0...v2.1.1) (2018-10-17)
+
+
+### Bug Fixes
+
+* **release files:** remove src from files to be published and npmignore ([b97a941](https://github.com/tillhub/numpad/commit/b97a941))
+
 # [2.1.0](https://github.com/tillhub/numpad/compare/v2.0.2...v2.1.0) (2018-10-17)
 
 
