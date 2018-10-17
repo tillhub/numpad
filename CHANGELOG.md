@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/tillhub/numpad/compare/v2.1.1...v2.1.2) (2018-10-17)
+
+
+### Bug Fixes
+
+* **circleci:** add build step ([eee92ed](https://github.com/tillhub/numpad/commit/eee92ed))
+
 ## [2.1.1](https://github.com/tillhub/numpad/compare/v2.1.0...v2.1.1) (2018-10-17)
 
 
