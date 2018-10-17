@@ -1,7 +1,7 @@
 {
   "name": "@tillhub/numpad",
   "private": false,
-  "version": "1.1.4",
+  "version": "1.0.0",
   "description": "Simple numpad with display field, that also acts as an optional input field.",
   "author": "qtotuan",
   "license": "MIT",
