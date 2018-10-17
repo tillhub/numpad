@@ -32,7 +32,7 @@ class Example extends Component {
 The component accepts optional properties.
 
 | Property          | type     | required | example                   | default  | description                                                                                                                                                 |
-|-------------------|----------|----------|---------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|:------------------|:---------|:---------|:--------------------------|:---------|:------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | handleChange      | function | no       | text => console.log(text) | () => {} | This function will be called with the current text in the input field. It is triggered on every click in the keypad and on every change in the input field. |
 | startValue        | string   | no       | '15'                      | null     | The input field will be initiated with this value.                                                                                                          |
 | disabled          | boolean  | no       | true                      | false    | If set to true, the input field and the keypad will be greyed out and disabled.                                                                             |
