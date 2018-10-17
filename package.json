@@ -6,7 +6,7 @@
   "author": "qtotuan",
   "license": "MIT",
   "repository": "tillhub/numpad",
-  "main": "dist/index.es.js",
+  "main": "dist/index.cjs.js",
   "engines": {
     "node": ">=8",
     "npm": ">=5"
@@ -30,8 +30,8 @@
   },
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.0",
-    "@semantic-release/git": "^7.0.3",
-    "@semantic-release/github": "^5.0.4",
+    "@semantic-release/git": "^7.0.4",
+    "@semantic-release/github": "^5.0.6",
     "@semantic-release/npm": "^5.0.4",
     "@storybook/react": "^3.4.10",
     "babel-core": "^6.26.3",
@@ -70,7 +70,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-url": "^1.4.0",
-    "semantic-release": "^15.9.12",
+    "semantic-release": "^15.9.17",
     "validate-commit-msg": "^2.14.0"
   },
   "files": [
