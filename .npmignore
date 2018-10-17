@@ -1,8 +1,0 @@
-.circleci
-tools
-test
-.eslintignore
-.env
-.editorconfig
-.gitignore
-docs

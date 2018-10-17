@@ -78,7 +78,6 @@
     "dist",
     "package.json",
     "package-lock.json",
-    "src/**/*.{js?x}",
     "CHANGELOG.md"
   ],
   "dependencies": {},
