@@ -1,3 +1,15 @@
+# [2.2.0](https://github.com/tillhub/numpad/compare/v2.1.4...v2.2.0) (2018-10-19)
+
+
+### Bug Fixes
+
+* **storybook:** add file-loader for svg and another story usecase ([be0be59](https://github.com/tillhub/numpad/commit/be0be59))
+
+
+### Features
+
+* **css:** add styled-component ([84a73e0](https://github.com/tillhub/numpad/commit/84a73e0))
+
 ## [2.1.4](https://github.com/tillhub/numpad/compare/v2.1.3...v2.1.4) (2018-10-17)
 
 
