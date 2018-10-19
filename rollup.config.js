@@ -19,6 +19,7 @@ export default {
       sourcemap: true
     }
   ],
+  external: ['styled-components'],
   plugins: [
     external(),
     postcss({
@@ -27,7 +28,7 @@ export default {
     url(),
     babel({
       exclude: 'node_modules/**',
-      plugins: [ 'external-helpers' ]
+      plugins: ['external-helpers']
     }),
     resolve(),
     commonjs()
