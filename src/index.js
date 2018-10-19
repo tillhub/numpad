@@ -1,20 +1,28 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
-import styles from './styles.css'
+import styled from 'styled-components'
 import Keypad from './Keypad'
+
+const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const StyledInput = styled.input`
+  padding: 30px 0;
+  text-align: center;
+  font-size: 80px;
+  border: none;
+  width: 100%;
+  margin-bottom: 30px;
+`
 
 const DEFAULT_WIDTH = '400px'
 
 export default class NumPad extends Component {
   state = {
-    input: this.props.startValue || '0'
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.startValue !== prevProps.startValue) {
-      this.setState({ input: this.props.startValue })
-    }
+    input: this.props.startValue
   }
 
   validate(string) {
@@ -38,7 +46,7 @@ export default class NumPad extends Component {
     return string.replace(/^0(?=[0-9-])/g, '')
   }
 
-  setDisplayText = (text) => {
+  setDisplayText = text => {
     const displayText = this.removeLeadingZero(text)
 
     if (!this.validate(displayText)) return null
@@ -48,7 +56,7 @@ export default class NumPad extends Component {
     })
   }
 
-  removeLastCharacter (str) {
+  removeLastCharacter(str) {
     if (!str) return str
     return str.trim().slice(0, -1)
   }
@@ -69,14 +77,19 @@ export default class NumPad extends Component {
     this.setDisplayText(text)
   }
 
-  render () {
-    const { disabled, withoutInputField, decimalSeparator, width, children } = this.props
+  render() {
+    const {
+      disabled,
+      withoutInputField,
+      decimalSeparator,
+      width,
+      children
+    } = this.props
     const { input } = this.state
 
     return (
-      <div className={styles.wrapper} style={{ width }}>
-        <input
-          className={classnames(styles.inputField)}
+      <StyledWrapper style={{ width }}>
+        <StyledInput
           value={input || '0'}
           onChange={e => this.setDisplayText(e.target.value)}
           disabled={disabled || withoutInputField}
@@ -89,7 +102,7 @@ export default class NumPad extends Component {
           clickHandler={this.handleKeypadPress}
           decimalSeparator={decimalSeparator}
         />
-      </div>
+      </StyledWrapper>
     )
   }
 }
@@ -106,7 +119,7 @@ NumPad.propTypes = {
 
 NumPad.defaultProps = {
   handleChange: () => {},
-  startValue: null,
+  startValue: '0',
   disabled: false,
   withoutInputField: false,
   decimalSeparator: '.',
