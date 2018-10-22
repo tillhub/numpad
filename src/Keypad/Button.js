@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-const ButtonDisabled = css`
+const ButtonDisabled = `
   color: grey;
   cursor: auto;
   img {
     opacity: 0.4;
   }
 `
-const ButtonActive = css`
+const ButtonActive = `
   &:hover {
     background-color: rgba(238, 159, 89, 0.5);
   }
