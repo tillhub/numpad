@@ -1,3 +1,11 @@
+## [2.2.1](https://github.com/tillhub/numpad/compare/v2.2.0...v2.2.1) (2018-10-22)
+
+
+### Bug Fixes
+
+* **buttons:** style changes ([dbaef21](https://github.com/tillhub/numpad/commit/dbaef21))
+* **config:** remove storybook config and add storybook files to npmignore ([c4d16d5](https://github.com/tillhub/numpad/commit/c4d16d5))
+
 # [2.2.0](https://github.com/tillhub/numpad/compare/v2.1.4...v2.2.0) (2018-10-19)
 
 
