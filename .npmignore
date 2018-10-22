@@ -6,3 +6,5 @@ test
 .editorconfig
 .gitignore
 docs
+.storybook
+stories
