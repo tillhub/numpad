@@ -7,6 +7,7 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: ${({ width }) => width};
 `
 
 const StyledInput = styled.input`
@@ -88,8 +89,9 @@ export default class NumPad extends Component {
     const { input } = this.state
 
     return (
-      <StyledWrapper style={{ width }}>
+      <StyledWrapper width={width}>
         <StyledInput
+          data-testid="input"
           value={input || '0'}
           onChange={e => this.setDisplayText(e.target.value)}
           disabled={disabled || withoutInputField}
@@ -118,7 +120,7 @@ NumPad.propTypes = {
 }
 
 NumPad.defaultProps = {
-  handleChange: () => {},
+  handleChange: () => { },
   startValue: '0',
   disabled: false,
   withoutInputField: false,

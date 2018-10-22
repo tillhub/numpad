@@ -2,7 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-const StyledButton = styled.div`
+const ButtonDisabled = css`
+  color: grey;
+  cursor: auto;
+  img {
+    opacity: 0.4;
+  }
+`
+const ButtonActive = css`
+  &:hover {
+    background-color: rgba(238, 159, 89, 0.5);
+  }
+  &:active {
+    background-color: rgb(238, 159, 89);
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+  }
+`
+const StyledButton = styled.span`
   background: lightgrey;
   text-align: center;
   border-radius: 4px;
@@ -10,31 +27,7 @@ const StyledButton = styled.div`
   display: table-cell;
   vertical-align: middle;
   cursor: pointer;
-
-  ${({ disabled }) =>
-    disabled === false &&
-    css`
-      &:hover {
-        background-color: rgba(238, 159, 89, 0.5);
-      }
-
-      &:active {
-        background-color: rgb(238, 159, 89);
-        box-shadow: 0 2px #666;
-        transform: translateY(2px);
-      }
-    `};
-
-  ${({ disabled }) =>
-    disabled &&
-    css`
-      color: grey;
-      cursor: auto;
-
-      & img {
-        opacity: 0.4;
-      }
-    `};
+  ${({ disabled }) => (disabled ? ButtonDisabled : ButtonActive)};
 `
 
 export default function Button({
