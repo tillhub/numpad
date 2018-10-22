@@ -32,6 +32,7 @@ export default function Keypad({ clickHandler, disabled, decimalSeparator }) {
         text="back"
         clickHandler={clickHandler}
         disabled={disabled}
+        data-testid="backspace"
       >
         <img src={backspaceIcon} />
       </StyledBackButton>
@@ -47,6 +48,7 @@ export default function Keypad({ clickHandler, disabled, decimalSeparator }) {
         text={decimalSeparator}
         clickHandler={clickHandler}
         disabled={disabled}
+        data-testid="decimalSeparator"
       >
         {decimalSeparator}
       </Button>

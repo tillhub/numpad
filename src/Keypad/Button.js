@@ -35,7 +35,8 @@ export default function Button({
   clickHandler,
   className,
   children,
-  disabled
+  disabled,
+  ...rest
 }) {
   function handleClick() {
     if (disabled) return
@@ -47,6 +48,7 @@ export default function Button({
       className={className}
       disabled={disabled}
       onClick={handleClick}
+      {...rest}
     >
       {children}
     </StyledButton>
