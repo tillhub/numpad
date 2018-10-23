@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -26,6 +26,20 @@ var createClass = function () {
   };
 }();
 
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
 var inherits = function (subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
@@ -40,6 +54,18 @@ var inherits = function (subClass, superClass) {
     }
   });
   if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+};
+
+var objectWithoutProperties = function (obj, keys) {
+  var target = {};
+
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+
+  return target;
 };
 
 var possibleConstructorReturn = function (self, call) {
@@ -58,13 +84,11 @@ var taggedTemplateLiteral = function (strings, raw) {
   }));
 };
 
-var _templateObject = taggedTemplateLiteral(['\n  color: grey;\n  cursor: auto;\n  img {\n    opacity: 0.4;\n  }\n'], ['\n  color: grey;\n  cursor: auto;\n  img {\n    opacity: 0.4;\n  }\n']),
-    _templateObject2 = taggedTemplateLiteral(['\n  &:hover {\n    background-color: rgba(238, 159, 89, 0.5);\n  }\n  &:active {\n    background-color: rgb(238, 159, 89);\n    box-shadow: 0 2px #666;\n    transform: translateY(2px);\n  }\n'], ['\n  &:hover {\n    background-color: rgba(238, 159, 89, 0.5);\n  }\n  &:active {\n    background-color: rgb(238, 159, 89);\n    box-shadow: 0 2px #666;\n    transform: translateY(2px);\n  }\n']),
-    _templateObject3 = taggedTemplateLiteral(['\n  background: lightgrey;\n  text-align: center;\n  border-radius: 4px;\n  line-height: 40px;\n  display: table-cell;\n  vertical-align: middle;\n  cursor: pointer;\n  ', ';\n'], ['\n  background: lightgrey;\n  text-align: center;\n  border-radius: 4px;\n  line-height: 40px;\n  display: table-cell;\n  vertical-align: middle;\n  cursor: pointer;\n  ', ';\n']);
+var _templateObject = taggedTemplateLiteral(['\n  background: lightgrey;\n  text-align: center;\n  border-radius: 4px;\n  line-height: 40px;\n  display: table-cell;\n  vertical-align: middle;\n  cursor: pointer;\n  ', ';\n'], ['\n  background: lightgrey;\n  text-align: center;\n  border-radius: 4px;\n  line-height: 40px;\n  display: table-cell;\n  vertical-align: middle;\n  cursor: pointer;\n  ', ';\n']);
 
-var ButtonDisabled = css(_templateObject);
-var ButtonActive = css(_templateObject2);
-var StyledButton = styled.span(_templateObject3, function (_ref) {
+var ButtonDisabled = '\n  color: grey;\n  cursor: auto;\n  img {\n    opacity: 0.4;\n  }\n';
+var ButtonActive = '\n  &:hover {\n    background-color: rgba(238, 159, 89, 0.5);\n  }\n  &:active {\n    background-color: rgb(238, 159, 89);\n    box-shadow: 0 2px #666;\n    transform: translateY(2px);\n  }\n';
+var StyledButton = styled.span(_templateObject, function (_ref) {
   var disabled = _ref.disabled;
   return disabled ? ButtonDisabled : ButtonActive;
 });
@@ -74,7 +98,8 @@ function Button(_ref2) {
       clickHandler = _ref2.clickHandler,
       className = _ref2.className,
       children = _ref2.children,
-      disabled = _ref2.disabled;
+      disabled = _ref2.disabled,
+      rest = objectWithoutProperties(_ref2, ['text', 'clickHandler', 'className', 'children', 'disabled']);
 
   function handleClick() {
     if (disabled) return;
@@ -83,11 +108,11 @@ function Button(_ref2) {
 
   return React.createElement(
     StyledButton,
-    {
+    _extends({
       className: className,
       disabled: disabled,
       onClick: handleClick
-    },
+    }, rest),
     children
   );
 }
@@ -132,14 +157,14 @@ Buttons.propTypes = {
 };
 
 var _templateObject$1 = taggedTemplateLiteral(['\n  width: 100%;\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-gap: 1em;\n  grid-auto-rows: 40px;\n  user-select: none;\n'], ['\n  width: 100%;\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-gap: 1em;\n  grid-auto-rows: 40px;\n  user-select: none;\n']),
-    _templateObject2$1 = taggedTemplateLiteral(['\n  grid-column: 1/3;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n'], ['\n  grid-column: 1/3;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n']),
-    _templateObject3$1 = taggedTemplateLiteral(['\n  grid-column: 1/3;\n'], ['\n  grid-column: 1/3;\n']);
+    _templateObject2 = taggedTemplateLiteral(['\n  grid-column: 1/3;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n'], ['\n  grid-column: 1/3;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n']),
+    _templateObject3 = taggedTemplateLiteral(['\n  grid-column: 1/3;\n'], ['\n  grid-column: 1/3;\n']);
 
 var StyledKeypad = styled.div(_templateObject$1);
 
-var StyledBackButton = styled(Button)(_templateObject2$1);
+var StyledBackButton = styled(Button)(_templateObject2);
 
-var StyledZeroButton = styled(Button)(_templateObject3$1);
+var StyledZeroButton = styled(Button)(_templateObject3);
 
 function Keypad(_ref) {
   var clickHandler = _ref.clickHandler,
@@ -154,7 +179,8 @@ function Keypad(_ref) {
       {
         text: 'back',
         clickHandler: clickHandler,
-        disabled: disabled
+        disabled: disabled,
+        'data-testid': 'backspace'
       },
       React.createElement('img', { src: backspaceIcon })
     ),
@@ -173,7 +199,8 @@ function Keypad(_ref) {
       {
         text: decimalSeparator,
         clickHandler: clickHandler,
-        disabled: disabled
+        disabled: disabled,
+        'data-testid': 'decimalSeparator'
       },
       decimalSeparator
     )
@@ -187,14 +214,14 @@ Keypad.propTypes = {
 };
 
 var _templateObject$2 = taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: ', ';\n'], ['\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: ', ';\n']),
-    _templateObject2$2 = taggedTemplateLiteral(['\n  padding: 30px 0;\n  text-align: center;\n  font-size: 80px;\n  border: none;\n  width: 100%;\n  margin-bottom: 30px;\n'], ['\n  padding: 30px 0;\n  text-align: center;\n  font-size: 80px;\n  border: none;\n  width: 100%;\n  margin-bottom: 30px;\n']);
+    _templateObject2$1 = taggedTemplateLiteral(['\n  padding: 30px 0;\n  text-align: center;\n  font-size: 80px;\n  border: none;\n  width: 100%;\n  margin-bottom: 30px;\n'], ['\n  padding: 30px 0;\n  text-align: center;\n  font-size: 80px;\n  border: none;\n  width: 100%;\n  margin-bottom: 30px;\n']);
 
 var StyledWrapper = styled.div(_templateObject$2, function (_ref) {
   var width = _ref.width;
   return width;
 });
 
-var StyledInput = styled.input(_templateObject2$2);
+var StyledInput = styled.input(_templateObject2$1);
 
 var DEFAULT_WIDTH = '400px';
 

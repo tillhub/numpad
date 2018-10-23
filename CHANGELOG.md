@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/tillhub/numpad/compare/v2.2.1...v2.2.2) (2018-10-23)
+
+
+### Bug Fixes
+
+* **styles:** remove styled component css function - wrongly used ([6e25bad](https://github.com/tillhub/numpad/commit/6e25bad))
+
 ## [2.2.1](https://github.com/tillhub/numpad/compare/v2.2.0...v2.2.1) (2018-10-22)
 
 
